@@ -1,3 +1,4 @@
+@import "_mixins.scss";
 $font-main: "Asap", sans-serif;
 $font-second: "Josefin Slab", serif;
 html,
@@ -11,21 +12,48 @@ body {
   font-weight: 500;
 }
 body {
-  background-color: #111;
+  background-color: #000;
 }
 
 .header {
   font-size: 5.2rem;
-
+  color: white;
   margin: 3rem auto;
   text-align: center;
 }
-.top-rated {
+.poke-nav {
+  overflow: hidden;
+}
+.poke-nav .search-container {
+}
+
+.topnav input[type="text"] {
+  padding: 6px;
+  margin-top: 8px;
+  font-size: 17px;
+  border: none;
+}
+
+.poke-nav .search-container button {
+  padding: 6px 10px;
+  margin-top: 8px;
+  margin-right: 16px;
+  background: #ddd;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+
+.poke-nav .search-container button:hover {
+  background: #ccc;
+}
+/* .top-rated {
+  color: white;
   margin: 1rem auto 2rem auto;
   text-align: center;
   font-size: 3.8rem;
-}
-.movie-grid {
+} */
+/* .movie-grid {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
@@ -48,7 +76,7 @@ body {
   height: 100%;
   top: 0;
   left: 0;
-  /* background-image: url("https://image.tmdb.org/t/p/w300/r7vmZjiyZw9rpJMQJdXpjgiCOk9.jpg"); */
+  background-image: url("https://image.tmdb.org/t/p/w300/r7vmZjiyZw9rpJMQJdXpjgiCOk9.jpg");
   background-position: center;
   z-index: 3;
   transition: all 0.3s;
@@ -114,4 +142,4 @@ body {
 .test {
   color: black;
   font-size: 3rem;
-}
+} */
