@@ -7,6 +7,7 @@ searchNone = document.getElementById("search-none");
 searchTrue = document.getElementById("search-true");
 
 function pokeSearch() {
+  var input, filter, pokeUL, li, a, i, txtValue;
   input = document.getElementById("poke-search");
   filter = input.value.toUpperCase();
   pokeUL = document.getElementById("pokemon");
