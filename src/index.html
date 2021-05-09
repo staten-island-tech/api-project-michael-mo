@@ -10,18 +10,35 @@
     <link rel="stylesheet" href="scss/style.scss" />
   </head>
   <body>
-    <div class="header">
-      <h1 class="title">SITHS Pokemon Database</h1>
-    </div>
-
-    <input type="text" id="poke-search" onkeyup="myFunction()" placeholder="Searching for Pokemon.."> 
-
-    <div class="justifycontent">
-      <div class="white-background">
-        <img src="img/derp-pikachu.png" alt="pikachu picture" class="pikachu-derp">
+    <section id="home-screen">
+      <div class="header">
+        <h1 class="title">SITHS Totally Accurate Gen I Pokemon Database</h1>
       </div>
-    </div>
+  
+      <input type="text" id="poke-search" onkeyup="pokeSearch()" placeholder="Searching for Pokemons..."> 
+  
+      <div id="search-none" class="justifycontent">
+        <div class="white-background">
+          <img src="img/bulbasaur.gif" alt="" class="picture1">
+          <img src="img/derp-pikachu.png" alt="" class="picture1">
+          <img src="img/sonic.gif" alt="" class="picture1">
+        </div>
+      </div>
+  
+      <ul id="search-true" hidden>
+        <button class="poke-button"></button>
+          <li><a href="#">Adele</a></li>
+          <li><a href="#">Agnes</a></li>
+        
+          <li><a href="#">Billy</a></li>
+          <li><a href="#">Bob</a></li>
+        
+          <li><a href="#">Calvin</a></li>
+          <li><a href="#">Christina</a></li>
+          <li><a href="#">Cindy</a></li>
+      </ul>
 
+    </section>
     <!-- <section class="movie-grid">
        <div class="movie-card">
         <div class="movie-card-front">

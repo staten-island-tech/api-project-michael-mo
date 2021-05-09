@@ -1,78 +1,78 @@
 const genres = [
   {
-    id: 28,
+    id: 1,
     name: "Action",
   },
   {
-    id: 12,
+    id: 2,
     name: "Adventure",
   },
   {
-    id: 16,
+    id: 3,
     name: "Animation",
   },
   {
-    id: 35,
+    id: 4,
     name: "Comedy",
   },
   {
-    id: 80,
+    id: 5,
     name: "Crime",
   },
   {
-    id: 99,
+    id: 6,
     name: "Documentary",
   },
   {
-    id: 18,
+    id: 7,
     name: "Drama",
   },
   {
-    id: 10751,
+    id: 8,
     name: "Family",
   },
   {
-    id: 14,
+    id: 9,
     name: "Fantasy",
   },
   {
-    id: 36,
+    id: 10,
     name: "History",
   },
   {
-    id: 27,
+    id: 11,
     name: "Horror",
   },
   {
-    id: 10402,
+    id: 12,
     name: "Music",
   },
   {
-    id: 9648,
+    id: 13,
     name: "Mystery",
   },
   {
-    id: 10749,
+    id: 14,
     name: "Romance",
   },
   {
-    id: 878,
+    id: 15,
     name: "Science Fiction",
   },
   {
-    id: 10770,
+    id: 16,
     name: "TV Movie",
   },
   {
-    id: 53,
+    id: 17,
     name: "Thriller",
   },
   {
-    id: 10752,
+    id: 18,
     name: "War",
   },
   {
-    id: 37,
+    id: 19,
     name: "Western",
   },
 ];
