@@ -4,12 +4,9 @@ import { genres } from "./genre";
 const key = "https://pokeapi.co/api/v2/pokemon?limit=151&offset=0";
 console.log(key);
 
-searchNone = document.getElementById("search-none");
-searchTrue = document.getElementById("search-true");
-
 function pokeSearch() {
   var input, filter, pokeUL, li, a, i, txtValue;
-  input = document.getElementById("pokeSearch");
+  input = document.getElementById("pokemonSearch");
   filter = input.value.toUpperCase();
   UL = document.getElementById("pokemon");
   li = UL.getElementsByTagName("li");
