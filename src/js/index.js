@@ -15,13 +15,26 @@ const query = async function () {
 query();
 
 function pokeSearch() {
-  var input, filter, UL, li, i, a, txtValue;
+  let input, filter, UL, li, i, a, txtValue;
   input = document.getElementById("pokemonSearch");
   filter = input.value.toUpperCase();
   UL = document.getElementById("pokemon");
   li = UL.getElementsByTagName("li");
+  i = 0;
 
-  for (i = 0; i < li.length; i++) {
+  searchTrue = document.getElementById("search-true");
+  searchFalse = document.getElementById("search-false");
+  if (filter.length > 0) {
+    searchTrue.style.display = "block";
+    searchFalse.style.display = "none";
+    console.log("true");
+  } else {
+    searchTrue.style.display = "none";
+    searchFalse.style.display = "block";
+    console.log("false");
+  }
+
+  while (i < li.length) {
     a = li[i].getElementsByTagName("a")[0];
     txtValue = a.textContent || a.innerText;
     if (txtValue.toUpperCase().indexOf(filter) > -1) {
@@ -29,5 +42,6 @@ function pokeSearch() {
     } else {
       li[i].style.display = "none";
     }
+    i = i + 1;
   }
 }
