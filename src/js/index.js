@@ -1,11 +1,21 @@
-import { DOMSelectors } from "./DOM";
-import { genres } from "./genre";
+/* import { DOMSelectors } from "./DOM";
+import { genres } from "./genre"; */
 
 const key = "https://pokeapi.co/api/v2/pokemon?limit=151&offset=0";
-console.log(key);
+
+const query = async function () {
+  try {
+    const response = await fetch(key);
+    const data = await response.json();
+    console.log(data);
+  } catch (error) {
+    console.log(error);
+  }
+};
+query();
 
 function pokeSearch() {
-  var input, filter, pokeUL, li, a, i, txtValue;
+  var input, filter, UL, li, i, a, txtValue;
   input = document.getElementById("pokemonSearch");
   filter = input.value.toUpperCase();
   UL = document.getElementById("pokemon");
