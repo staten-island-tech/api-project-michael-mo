@@ -45,3 +45,5 @@ function pokeSearch() {
     i = i + 1;
   }
 }
+/* input = document.getElementById("pokemonSearch");
+input.addEventListener("keypress", pokeSearch()); */
