@@ -7,7 +7,7 @@ const query = async function () {
   try {
     const response = await fetch(key);
     const data = await response.json();
-    console.log(data);
+    console.log(data.results);
   } catch (error) {
     console.log(error);
   }

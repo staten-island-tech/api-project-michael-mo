@@ -25,7 +25,7 @@ body {
 }
 
 #pokemonSearch {
-  background-image: url("src/scss/search-icon.png");
+  /* background-image: url("src/scss/search-icon.png"); */
   background-position: 10px 12px;
   background-repeat: no-repeat;
   width: 100%;
@@ -39,7 +39,7 @@ body {
   padding: 0;
   margin: 0;
 }
-.spacing {
+.spacingheight {
   height: 5%;
 }
 #pokemon li a {
@@ -60,7 +60,7 @@ body {
 
 .white-background {
   background-color: white;
-  margin-top: 1.5%;
+  margin-top: 3%;
   display: flex;
   justify-content: center;
   width: 80%;
@@ -71,7 +71,7 @@ body {
 }
 
 .picturebulbasaur {
-  width: 35%;
+  width: 40%;
 }
 .picturepikachu {
   width: 30%;
