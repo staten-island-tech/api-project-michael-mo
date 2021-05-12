@@ -25,7 +25,7 @@ body {
 }
 
 #pokemonSearch {
-  /* background-image: url("/scss/search-icon.png"); */
+  background-image: url("src/scss/search-icon.png");
   background-position: 10px 12px;
   background-repeat: no-repeat;
   width: 100%;
@@ -60,14 +60,25 @@ body {
 
 .white-background {
   background-color: white;
-  margin-top: 5%;
+  margin-top: 1.5%;
   display: flex;
   justify-content: center;
   width: 80%;
 }
 
-.picture1 {
-  width: 90%;
+.spacingwidth {
+  width: 5%;
+}
+
+.picturebulbasaur {
+  width: 35%;
+}
+.picturepikachu {
+  width: 30%;
+}
+
+.picturesonic {
+  width: 40%;
 }
 
 /* .movie-grid {
