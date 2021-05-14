@@ -2,12 +2,24 @@
 import { genres } from "./genre"; */
 
 const key = "https://pokeapi.co/api/v2/pokemon?limit=151&offset=0";
+counter = 0;
 
 const query = async function () {
   try {
     const response = await fetch(key);
     const data = await response.json();
-    data.results.forEach(element => document.body.appendChild(element.name));
+    data.results.forEach(function makeElement(element) {
+      const newButton = document.createElement("button");
+      const content = document.createTextNode(element.name);
+      const pokemonData = document.getElementById("pokemon");
+      const existingDiv = document.getElementById("pokemon" + counter);
+      newButton.appendChild(content);
+      newButton.setAttribute("id", "pokemon" + counter);
+      newButton.setAttribute("class", "pokemonName");
+      document.body.insertBefore(newButton, existingDiv);
+      document.body.insertBefore(pokemonData, newButton);
+      counter++;
+    });
   } catch (error) {
     console.log(error);
   }
