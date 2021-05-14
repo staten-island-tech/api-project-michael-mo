@@ -30,8 +30,8 @@ function pokeSearch() {
   let input, filter, UL, li, i, a, txtValue;
   input = document.getElementById("pokemonSearch");
   filter = input.value.toUpperCase();
-  UL = document.getElementById("pokemon");
-  li = UL.getElementsByTagName("li");
+  pokeDataTwo = document.getElementById("pokemon");
+  dataDiv = pokeDataTwo.getElementsByTagName("div");
   i = 0;
 
   searchTrue = document.getElementById("search-true");
@@ -47,12 +47,12 @@ function pokeSearch() {
   }
 
   while (i < li.length) {
-    a = li[i].getElementsByTagName("a")[0];
+    a = dataDiv[i].getElementsByTagName("a")[0];
     txtValue = a.textContent || a.innerText;
     if (txtValue.toUpperCase().indexOf(filter) > -1) {
-      li[i].style.display = "";
+      dataDiv[i].style.display = "";
     } else {
-      li[i].style.display = "none";
+      dataDiv[i].style.display = "none";
     }
     i = i + 1;
   }
