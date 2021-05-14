@@ -7,7 +7,7 @@ const query = async function () {
   try {
     const response = await fetch(key);
     const data = await response.json();
-    console.log(data.results[0].name);
+    data.results.forEach(element => document.body.appendChild(element.name));
   } catch (error) {
     console.log(error);
   }
