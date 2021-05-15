@@ -12,12 +12,10 @@ const query = async function () {
       const newButton = document.createElement("button");
       const content = document.createTextNode(element.name);
       const pokemonData = document.getElementById("pokemon");
-      const existingDiv = document.getElementById("pokemon" + counter);
       newButton.appendChild(content);
       newButton.setAttribute("id", "pokemon" + counter);
       newButton.setAttribute("class", "pokemonName");
-      document.body.insertBefore(newButton, existingDiv);
-      document.body.insertBefore(pokemonData, newButton);
+      pokemonData.appendChild(newButton);
       counter++;
     });
   } catch (error) {
@@ -46,7 +44,7 @@ function pokeSearch() {
     console.log("false");
   }
 
-  while (i < li.length) {
+  while (i < dataDiv.length) {
     a = dataDiv[i].getElementsByTagName("a")[0];
     txtValue = a.textContent || a.innerText;
     if (txtValue.toUpperCase().indexOf(filter) > -1) {
