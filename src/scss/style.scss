@@ -42,16 +42,6 @@ body {
 .spacingheight {
   height: 5%;
 }
-#pokemon li a {
-  border: 1px solid #ddd;
-  margin-top: -1px;
-  background-color: #f6f6f6;
-  padding: 12px;
-  text-decoration: none;
-  font-size: 18px;
-  color: black;
-  display: block;
-}
 
 .justifycontent {
   display: flex;
@@ -79,6 +69,18 @@ body {
 
 .picturesonic {
   width: 40%;
+}
+
+.pokemonName {
+  margin-left: 5%;
+  width: 90%;
+  font-size: 3rem;
+  border: 1px solid #ddd;
+  background-color: #fff;
+  padding: 12px;
+  text-decoration: none;
+  color: black;
+  display: block;
 }
 
 /* .movie-grid {

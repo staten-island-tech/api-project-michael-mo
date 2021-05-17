@@ -9,9 +9,11 @@ const query = async function () {
     const response = await fetch(key);
     const data = await response.json();
     data.results.forEach(function makeElement(element) {
+      const newDiv = document.createElement("div");
       const newButton = document.createElement("button");
       const content = document.createTextNode(element.name);
       const pokemonData = document.getElementById("pokemon");
+      newDiv.appendChild(newButton);
       newButton.appendChild(content);
       newButton.setAttribute("id", "pokemon" + counter);
       newButton.setAttribute("class", "pokemonName");
@@ -25,11 +27,11 @@ const query = async function () {
 query();
 
 function pokeSearch() {
-  let input, filter, UL, li, i, a, txtValue;
+  let input, filter, pokeID, dataDiv, i, a, txtValue;
   input = document.getElementById("pokemonSearch");
   filter = input.value.toUpperCase();
-  pokeDataTwo = document.getElementById("pokemon");
-  dataDiv = pokeDataTwo.getElementsByTagName("div");
+  pokeID = document.getElementById("pokemon");
+  dataDiv = pokeID.getElementsByTagName("div");
   i = 0;
 
   searchTrue = document.getElementById("search-true");
@@ -43,16 +45,18 @@ function pokeSearch() {
     searchFalse.style.display = "block";
     console.log("false");
   }
-
+  console.log(pokeID);
   while (i < dataDiv.length) {
-    a = dataDiv[i].getElementsByTagName("a")[0];
+    a = dataDiv[i].getElementsByTagName("button")[0];
     txtValue = a.textContent || a.innerText;
     if (txtValue.toUpperCase().indexOf(filter) > -1) {
       dataDiv[i].style.display = "";
+      console.log("shown");
     } else {
       dataDiv[i].style.display = "none";
+      console.log("not shown");
     }
-    i = i + 1;
+    i++;
   }
 }
 /* input = document.getElementById("pokemonSearch");
