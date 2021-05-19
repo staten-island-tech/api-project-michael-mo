@@ -1,11 +1,11 @@
-/* import { DOMSelectors } from "./DOM";
-import { genres } from "./genre"; */
+ import { DOMSelectors } from "./DOM";
+//import { genres } from "./genre"; */
 
 const key = "https://pokeapi.co/api/v2/pokemon?limit=151&offset=0";
-counter = 0;
 
 const query = async function () {
   try {
+    let counter = 0;
     const response = await fetch(key);
     const data = await response.json();
     data.results.forEach(function makeElement(element) {
@@ -31,11 +31,11 @@ function pokeSearch() {
   input = document.getElementById("pokemonSearch");
   filter = input.value.toUpperCase();
   pokeID = document.getElementById("pokemon");
-  dataDiv = pokeID.getElementsByTagName("div");
+  dataDiv = pokeID.children.getElementsByTagName("div");
   i = 0;
 
-  searchTrue = document.getElementById("search-true");
-  searchFalse = document.getElementById("search-false");
+  const searchTrue = document.getElementById("search-true");
+  const searchFalse = document.getElementById("search-false");
   if (filter.length > 0) {
     searchTrue.style.display = "block";
     searchFalse.style.display = "none";
@@ -44,9 +44,11 @@ function pokeSearch() {
     searchTrue.style.display = "none";
     searchFalse.style.display = "block";
     console.log("false");
-  }
-  console.log(pokeID);
-  while (i < dataDiv.length) {
+  };
+  console.log(i);
+  console.log(pokeID.children.length);
+  console.log(dataDiv.length);
+  while (i < pokeID.children.length) {
     a = dataDiv[i].getElementsByTagName("button")[0];
     txtValue = a.textContent || a.innerText;
     if (txtValue.toUpperCase().indexOf(filter) > -1) {
@@ -61,3 +63,4 @@ function pokeSearch() {
 }
 /* input = document.getElementById("pokemonSearch");
 input.addEventListener("keypress", pokeSearch()); */
+DOMSelectors.searchBar.addEventListener("keyup", pokeSearch)
