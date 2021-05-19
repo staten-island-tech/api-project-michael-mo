@@ -31,7 +31,7 @@ function pokeSearch() {
   input = document.getElementById("pokemonSearch");
   filter = input.value.toUpperCase();
   pokeID = document.getElementById("pokemon");
-  dataDiv = pokeID.children.getElementsByTagName("div");
+  dataDiv = pokeID.children;
   i = 0;
 
   const searchTrue = document.getElementById("search-true");
@@ -46,9 +46,8 @@ function pokeSearch() {
     console.log("false");
   };
   console.log(i);
-  console.log(pokeID.children.length);
   console.log(dataDiv.length);
-  while (i < pokeID.children.length) {
+  while (i < dataDiv.length) {
     a = dataDiv[i].getElementsByTagName("button")[0];
     txtValue = a.textContent || a.innerText;
     if (txtValue.toUpperCase().indexOf(filter) > -1) {
@@ -58,6 +57,7 @@ function pokeSearch() {
       dataDiv[i].style.display = "none";
       console.log("not shown");
     }
+    console.log(i);
     i++;
   }
 }
