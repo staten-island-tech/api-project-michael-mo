@@ -1,4 +1,4 @@
- import { DOMSelectors } from "./DOM";
+import { DOMSelectors } from "./DOM";
 //import { genres } from "./genre"; */
 
 const key = "https://pokeapi.co/api/v2/pokemon?limit=151&offset=0";
@@ -44,11 +44,12 @@ function pokeSearch() {
     searchTrue.style.display = "none";
     searchFalse.style.display = "block";
     console.log("false");
-  };
+  }
   console.log(i);
   console.log(dataDiv.length);
+  i = 0;
   while (i < dataDiv.length) {
-    a = dataDiv[i].getElementsByTagName("button")[0];
+    a = dataDiv[i];
     txtValue = a.textContent || a.innerText;
     if (txtValue.toUpperCase().indexOf(filter) > -1) {
       dataDiv[i].style.display = "";
@@ -63,4 +64,4 @@ function pokeSearch() {
 }
 /* input = document.getElementById("pokemonSearch");
 input.addEventListener("keypress", pokeSearch()); */
-DOMSelectors.searchBar.addEventListener("keyup", pokeSearch)
+DOMSelectors.searchBar.addEventListener("keyup", pokeSearch);
