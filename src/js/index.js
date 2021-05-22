@@ -49,7 +49,7 @@ function pokeSearch() {
   console.log(dataDiv.length);
   i = 0;
   while (i < dataDiv.length) {
-    a = dataDiv[i];
+    a = dataDiv[i][0];
     console.log(i);
     txtValue = a.textContent || a.innerText;
     if (txtValue.toUpperCase().indexOf(filter) > -1) {
