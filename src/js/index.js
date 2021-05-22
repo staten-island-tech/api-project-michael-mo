@@ -50,6 +50,7 @@ function pokeSearch() {
   i = 0;
   while (i < dataDiv.length) {
     a = dataDiv[i];
+    console.log(i);
     txtValue = a.textContent || a.innerText;
     if (txtValue.toUpperCase().indexOf(filter) > -1) {
       dataDiv[i].style.display = "";
@@ -58,7 +59,6 @@ function pokeSearch() {
       dataDiv[i].style.display = "none";
       console.log("not shown");
     }
-    console.log(i);
     i++;
   }
 }
