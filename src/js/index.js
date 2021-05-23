@@ -10,14 +10,17 @@ const query = async function () {
     const data = await response.json();
     data.results.forEach(function makeElement(element) {
       const newDiv = document.createElement("div");
+      const space = document.createElement("div");
       const newButton = document.createElement("button");
       const content = document.createTextNode(element.name);
       const pokemonData = document.getElementById("pokemon");
       newDiv.appendChild(newButton);
       newButton.appendChild(content);
+      newDiv.appendChild(space);
+      space.setAttribute("class", "pokeSpacing");
       newButton.setAttribute("id", "pokemon" + counter);
       newButton.setAttribute("class", "pokemonName");
-      pokemonData.appendChild(newButton);
+      pokemonData.appendChild(newDiv);
       counter++;
     });
   } catch (error) {
