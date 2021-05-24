@@ -24,6 +24,7 @@ const query = async function () {
       counter++;
     });
   } catch (error) {
+    alert("hey something went wrong");
     console.log(error);
   }
 };
@@ -50,8 +51,7 @@ function pokeSearch() {
   while (i < dataDiv.length) {
     a = dataDiv[i];
     txtValue = a.textContent || a.innerText;
-    firstLetter = txtValue[0];
-    if (firstLetter.toUpperCase().indexOf(filter) > -1) {
+    if (txtValue.toUpperCase().indexOf(filter) > -1) {
       dataDiv[i].style.display = "";
     } else {
       dataDiv[i].style.display = "none";
