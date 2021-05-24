@@ -31,12 +31,12 @@ const query = async function () {
 query();
 
 function pokeSearch() {
-  let input, filter, pokeID, dataDiv, i, a, txtValue, error;
+  let input, filter, pokeID, dataDiv, i, a, txtValue, error, counterTwo;
   input = document.getElementById("pokemonSearch");
   filter = input.value.toUpperCase();
   pokeID = document.getElementById("pokemon");
-  error = document.getElementById("pokemon");
   dataDiv = pokeID.children;
+  error = document.getElementById("errorMessage");
   i = 0;
 
   const searchTrue = document.getElementById("search-true");
@@ -49,18 +49,23 @@ function pokeSearch() {
     searchFalse.style.display = "block";
   }
   i = 0;
+  counterTwo = 0;
   while (i < dataDiv.length) {
     a = dataDiv[i];
     txtValue = a.textContent || a.innerText;
     if (txtValue.toUpperCase().indexOf(filter) > -1) {
       dataDiv[i].style.display = "";
+      counterTwo++;
     } else {
       dataDiv[i].style.display = "none";
     }
     i++;
   }
-  if (dataDiv.length == 0 && filter,length > 0){
-
+  if (counterTwo <= 0 && filter.length >= 1) {
+    error.style.display = "";
+    console.log("please spell better");
+  } else {
+    error.style.display = "none";
   }
 }
 DOMSelectors.searchBar.addEventListener("keyup", pokeSearch);

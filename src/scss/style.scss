@@ -47,6 +47,15 @@ body {
   display: flex;
   justify-content: center;
 }
+.alignitems {
+  display: flex;
+  align-items: center;
+}
+.justifycontentalignitems {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 .white-background {
   background-color: white;
@@ -85,6 +94,17 @@ body {
 }
 .pokeSpacing {
   height: 1%;
+}
+.error {
+  text-align: center;
+  font-size: 5vh;
+  color: white;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 5vh 140% 5vh;
+}
+.baldi {
+  height: 120%;
 }
 
 /* .movie-grid {
