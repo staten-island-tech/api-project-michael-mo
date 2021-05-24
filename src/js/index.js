@@ -19,7 +19,7 @@ const query = async function () {
       newDiv.appendChild(space);
       space.setAttribute("class", "pokeSpacing");
       newButton.setAttribute("id", "pokemon" + counter);
-      newButton.setAttribute("class", "pokemonName");
+      newButton.setAttribute("class", "pokemonButton");
       pokemonData.appendChild(newDiv);
       counter++;
     });
