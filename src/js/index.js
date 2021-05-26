@@ -21,6 +21,23 @@ const query = async function () {
       newButton.setAttribute("id", "pokemon" + counter);
       newButton.setAttribute("class", "pokemonButton");
       pokemonData.appendChild(newDiv);
+      const queryTwo = async function () {
+        try {
+          const idkey = element.url;
+          const idresponse = await fetch(idkey);
+          const iddata = await idresponse.json();
+          console.log(iddata);
+          iddata.types.forEach(function pickType(elementTwo) {
+            const typeDiv = document.createElement("div");
+            const typecontent = document.createTextNode(elementTwo.type.name);
+            typeDiv.appendChild(typecontent);
+            newButton.appendChild(typeDiv);
+          });
+        } catch (error) {
+          console.log(error);
+        }
+      };
+      queryTwo();
       counter++;
     });
   } catch (error) {
