@@ -13,23 +13,27 @@ const query = async function () {
       const space = document.createElement("div");
       const newButton = document.createElement("button");
       const content = document.createTextNode(element.name);
+      const divinsidediv = document.createElement("div");
       const pokemonData = document.getElementById("pokemon");
       newDiv.appendChild(newButton);
-      newButton.appendChild(content);
+      divinsidediv.appendChild(content);
+      newButton.appendChild(divinsidediv);
       newDiv.appendChild(space);
       space.setAttribute("class", "pokeSpacing");
+      newDiv.setAttribute("id", "pokemonDiv" + counter);
       newButton.setAttribute("id", "pokemon" + counter);
       newButton.setAttribute("class", "pokemonButton");
+      divinsidediv.setAttribute("id", "divinsidediv" + counter);
       pokemonData.appendChild(newDiv);
       const queryTwo = async function () {
         try {
           const idkey = element.url;
           const idresponse = await fetch(idkey);
           const iddata = await idresponse.json();
-          console.log(iddata);
           iddata.types.forEach(function pickType(elementTwo) {
             const typeDiv = document.createElement("div");
             const typecontent = document.createTextNode(elementTwo.type.name);
+            typeDiv.setAttribute("class", "typeclass" + counter);
             typeDiv.appendChild(typecontent);
             newButton.appendChild(typeDiv);
           });
@@ -48,13 +52,22 @@ const query = async function () {
 query();
 
 function pokeSearch() {
-  let input, filter, pokeID, dataDiv, i, a, txtValue, error, counterTwo;
+  let input,
+    filter,
+    pokeID,
+    dataDiv,
+    i,
+    a,
+    txtValue,
+    error,
+    counterTwo,
+    pokeDiv;
   input = document.getElementById("pokemonSearch");
   filter = input.value.toUpperCase();
-  pokeID = document.getElementById("pokemon");
-  dataDiv = pokeID.children;
+  dataDiv = document.getElementById("pokemon");
+  pokeID = dataDiv.children;
+  console.log(dataDiv);
   error = document.getElementById("errorMessage");
-  i = 0;
 
   const searchTrue = document.getElementById("search-true");
   const searchFalse = document.getElementById("search-false");
@@ -67,14 +80,15 @@ function pokeSearch() {
   }
   i = 0;
   counterTwo = 0;
-  while (i < dataDiv.length) {
-    a = dataDiv[i];
+  while (i < pokeID.length) {
+    pokeDiv = document.getElementById("pokemonDiv" + i);
+    a = document.getElementById("divinsidediv" + i);
     txtValue = a.textContent || a.innerText;
     if (txtValue.toUpperCase().indexOf(filter) > -1) {
-      dataDiv[i].style.display = "";
+      pokeDiv.style.display = "";
       counterTwo++;
     } else {
-      dataDiv[i].style.display = "none";
+      pokeDiv.style.display = "none";
     }
     i++;
   }
